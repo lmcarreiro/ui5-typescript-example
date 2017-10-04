@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "none",
+        "alwaysStrict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "allowJs": true,
+        "sourceMap": true
+    },
+    "include": [
+        "src/**/*",
+        "node_modules/@types"
+    ],
+    "exclude": [
+        "node_modules",
+        "resources",
+        "**/*.spec.ts"
+    ]
+}

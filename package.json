@@ -2,9 +2,18 @@
     "name": "ui-typescript-example",
     "version": "1.0.0",
     "scripts": {
-        "start": "lite-server -c=bs-config.json"
+        "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
+        "serve": "lite-server -c=bs-config.json",
+        "build": "tsc -p tsconfig.json",
+        "build:watch": "tsc -p tsconfig.json -w",
+        "lint": "tslint ./src/**/*.ts -t verbose"
     },
     "devDependencies": {
-        "lite-server": "^2.3.0"
+        "@types/jquery": "^2.0.47",
+        "@types/openui5": "^1.40.2",
+        "concurrently": "^3.2.0",
+        "lite-server": "^2.3.0",
+        "typescript": "^2.5.2",
+        "tslint": "^3.15.1"
     }
 }
