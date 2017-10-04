@@ -1,2 +1,4 @@
 node_modules
 /resources
+*.js
+*.js.map
