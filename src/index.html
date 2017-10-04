@@ -8,7 +8,7 @@
 
     <!-- Bootstrapping UI5 -->
     <script id="sap-ui-bootstrap"
-            src="../../../../../../resources/sap-ui-core.js"
+            src="/resources/sap-ui-core.js"
             data-sap-ui-libs="sap.m"
             data-sap-ui-theme="sap_belize"
             data-sap-ui-compatVersion="edge"
@@ -20,9 +20,12 @@
     <script>
         sap.ui.getCore().attachInit(function () {
             sap.ui.require([
+                "sap/ui/demo/masterdetail/localService/mockserver",
                 "sap/m/Shell",
                 "sap/ui/core/ComponentContainer"
-            ], function (Shell, ComponentContainer) {
+            ], function (server, Shell, ComponentContainer) {
+                // set up test service for local testing
+                server.init();
                 // initialize the UI component
                 new Shell({
                     app: new ComponentContainer({

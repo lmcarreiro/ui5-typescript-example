@@ -1,0 +1,10 @@
+{
+    "name": "ui-typescript-example",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "lite-server -c=bs-config.json"
+    },
+    "devDependencies": {
+        "lite-server": "^2.3.0"
+    }
+}
