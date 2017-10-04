@@ -31,7 +31,7 @@ namespace typescript.example.ui5app
             this.setModel(models.createDeviceModel(), "device");
 
             // call the base component's init function and create the App view
-            UIComponent.prototype.init.apply(this, arguments);
+            super.init();
 
             // create the views based on the url/hash
             this.getRouter().initialize();
@@ -43,11 +43,12 @@ namespace typescript.example.ui5app
          * @public
          * @override
          */
-        public destroy(): void {
+        public destroy(bSuppressInvalidate: boolean): void {
             this.oListSelector.destroy();
             this._oErrorHandler.destroy();
+
             // call the base component's destroy function
-            UIComponent.prototype.destroy.apply(this, arguments);
+            super.destroy(bSuppressInvalidate);
         }
 
         /**
