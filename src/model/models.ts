@@ -1,16 +1,10 @@
-sap.ui.define([
-        "sap/ui/model/json/JSONModel",
-        "sap/ui/Device"
-    ], function (JSONModel, Device) {
-        "use strict";
+import JSONModel    from "sap/ui/model/json/JSONModel";
+import Device       from "sap/ui/Device";
 
-        return {
-            createDeviceModel : function () {
-                var oModel = new JSONModel(Device);
-                oModel.setDefaultBindingMode("OneWay");
-                return oModel;
-            }
-        };
-
+export default {
+    createDeviceModel(): JSONModel {
+        var oModel = new JSONModel(Device);
+        oModel.setDefaultBindingMode("OneWay");
+        return oModel;
     }
-);
+};

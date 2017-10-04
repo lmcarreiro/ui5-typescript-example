@@ -25,7 +25,11 @@ function define(aDependencies: string[], vFactory: (...args: any[]) => any): any
     var newDependencies = aDependencies.slice(2);
 
     //passa null no lugar das dependências "require" e "exports" geradas pelo typescript e substitui coloca as dependências fornecidas pelo ui5 como default
-    var newFactory = (...args: any[]) => vFactory(null, null, ...args.map((d: any) => ({ default: d })));
+    var newFactory = (...args: any[]) => {
+        var exports: { default: any } = { default: undefined };
+        vFactory(null, exports, ...args.map((d: any) => ({ default: d })));
+        return exports.default;
+    };
 
     return sap.ui.define(newDependencies, newFactory);
 }

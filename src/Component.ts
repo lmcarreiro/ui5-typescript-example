@@ -74,4 +74,4 @@ namespace typescript.example.ui5app
     }
 }
 
-export = typescript.example.ui5app.Component;
+export default typescript.example.ui5app.Component;
