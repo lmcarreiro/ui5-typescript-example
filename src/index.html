@@ -13,14 +13,14 @@
             data-sap-ui-theme="sap_belize"
             data-sap-ui-compatVersion="edge"
             data-sap-ui-preload="async"
-            data-sap-ui-resourceroots='{"sap.ui.demo.masterdetail": "."}'
+            data-sap-ui-resourceroots='{"typescript.example.ui5app": "."}'
             data-sap-ui-frameOptions="trusted">
     </script>
 
     <script>
         sap.ui.getCore().attachInit(function () {
             sap.ui.require([
-                "sap/ui/demo/masterdetail/localService/mockserver",
+                "typescript/example/ui5app/localService/mockserver",
                 "sap/m/Shell",
                 "sap/ui/core/ComponentContainer"
             ], function (server, Shell, ComponentContainer) {
@@ -30,7 +30,7 @@
                 new Shell({
                     app: new ComponentContainer({
                         height : "100%",
-                        name : "sap.ui.demo.masterdetail"
+                        name : "typescript.example.ui5app"
                     })
                 }).placeAt("content");
             });

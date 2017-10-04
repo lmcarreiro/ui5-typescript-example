@@ -4,7 +4,7 @@ sap.ui.define([
     ], function (BaseObject, Sorter) {
     "use strict";
 
-    return BaseObject.extend("sap.ui.demo.masterdetail.model.GroupSortState", {
+    return BaseObject.extend("typescript.example.ui5app.model.GroupSortState", {
 
         /**
          * Creates sorters and groupers for the master list.
@@ -15,7 +15,7 @@ sap.ui.define([
          * @public
          * @param {sap.ui.model.json.JSONModel} oViewModel the model of the current view
          * @param {function} fnGroupFunction the grouping function to be applied
-         * @alias sap.ui.demo.masterdetail.model.GroupSortState
+         * @alias typescript.example.ui5app.model.GroupSortState
          */
         constructor: function (oViewModel, fnGroupFunction) {
             this._oViewModel = oViewModel;

@@ -2,7 +2,7 @@ sap.ui.define([
     "sap/ui/test/Opa5",
     "sap/ui/test/actions/Press",
     "sap/ui/test/actions/EnterText",
-    "sap/ui/demo/masterdetail/test/integration/pages/Common",
+    "typescript/example/ui5app/test/integration/pages/Common",
     "sap/ui/test/matchers/AggregationLengthEquals",
     "sap/ui/test/matchers/AggregationFilled",
     "sap/ui/test/matchers/PropertyStrictEquals"

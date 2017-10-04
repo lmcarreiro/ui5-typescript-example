@@ -4,7 +4,7 @@ sap.ui.define([
     "use strict";
 
     function getFrameUrl (sHash, sUrlParameters) {
-        var sUrl = jQuery.sap.getResourcePath("sap/ui/demo/masterdetail/app", ".html");
+        var sUrl = jQuery.sap.getResourcePath("typescript/example/ui5app/app", ".html");
         sHash = sHash || "";
         sUrlParameters = sUrlParameters ? "?" + sUrlParameters : "";
 
@@ -17,7 +17,7 @@ sap.ui.define([
         return sUrl + sUrlParameters + sHash;
     }
 
-    return Opa5.extend("sap.ui.demo.masterdetail.test.integration.pages.Common", {
+    return Opa5.extend("typescript.example.ui5app.test.integration.pages.Common", {
 
         iStartTheApp : function (oOptions) {
             oOptions = oOptions || {};
@@ -62,7 +62,7 @@ sap.ui.define([
 
         getMockServer : function () {
             return new Promise(function (success) {
-                Opa5.getWindow().sap.ui.require(["sap/ui/demo/masterdetail/localService/mockserver"], function (mockserver) {
+                Opa5.getWindow().sap.ui.require(["typescript/example/ui5app/localService/mockserver"], function (mockserver) {
                     success(mockserver.getMockServer());
                 });
             });

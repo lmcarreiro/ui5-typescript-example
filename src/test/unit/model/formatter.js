@@ -2,7 +2,7 @@
 
 sap.ui.define([
     "sap/m/Text",
-    "sap/ui/demo/masterdetail/model/formatter"
+    "typescript/example/ui5app/model/formatter"
 ], function (Text, formatter) {
     "use strict";
 

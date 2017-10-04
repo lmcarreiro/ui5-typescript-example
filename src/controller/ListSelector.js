@@ -3,14 +3,14 @@ sap.ui.define([
     ], function (BaseObject) {
         "use strict";
 
-        return BaseObject.extend("sap.ui.demo.masterdetail.model.ListSelector", {
+        return BaseObject.extend("typescript.example.ui5app.model.ListSelector", {
 
             /**
              * Provides a convenience API for selecting list items. All the functions will wait until the initial load of the a List passed to the instance by the setBoundMasterList
              * function.
              * @class
              * @public
-             * @alias sap.ui.demo.masterdetail.model.ListSelector
+             * @alias typescript.example.ui5app.model.ListSelector
              */
 
             constructor : function () {
@@ -113,7 +113,7 @@ sap.ui.define([
              * is called.
              * @param {function} fnFunction the function to be executed when the list fires a selection change event
              * @param {function} oListener the listener object
-             * @return {sap.ui.demo.masterdetail.model.ListSelector} the list selector object for method chaining
+             * @return {typescript.example.ui5app.model.ListSelector} the list selector object for method chaining
              * @public
              */
             attachListSelectionChange : function (fnFunction, oListener) {
@@ -129,7 +129,7 @@ sap.ui.define([
              * is called.
              * @param {function} fnFunction the function to be executed when the list fires a selection change event
              * @param {function} oListener the listener object
-             * @return {sap.ui.demo.masterdetail.model.ListSelector} the list selector object for method chaining
+             * @return {typescript.example.ui5app.model.ListSelector} the list selector object for method chaining
              * @public
              */
             detachListSelectionChange : function (fnFunction, oListener) {

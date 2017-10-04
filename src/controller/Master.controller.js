@@ -1,18 +1,18 @@
 /*global history */
 sap.ui.define([
-        "sap/ui/demo/masterdetail/controller/BaseController",
+        "typescript/example/ui5app/controller/BaseController",
         "sap/ui/model/json/JSONModel",
         "sap/ui/model/Filter",
         "sap/ui/model/FilterOperator",
         "sap/m/GroupHeaderListItem",
         "sap/ui/Device",
-        "sap/ui/demo/masterdetail/model/formatter",
-        "sap/ui/demo/masterdetail/model/grouper",
-        "sap/ui/demo/masterdetail/model/GroupSortState"
+        "typescript/example/ui5app/model/formatter",
+        "typescript/example/ui5app/model/grouper",
+        "typescript/example/ui5app/model/GroupSortState"
     ], function (BaseController, JSONModel, Filter, FilterOperator, GroupHeaderListItem, Device, formatter, grouper, GroupSortState) {
         "use strict";
 
-        return BaseController.extend("sap.ui.demo.masterdetail.controller.Master", {
+        return BaseController.extend("typescript.example.ui5app.controller.Master", {
 
             formatter: formatter,
 
@@ -150,7 +150,7 @@ sap.ui.define([
              */
             onOpenViewSettings : function () {
                 if (!this._oViewSettingsDialog) {
-                    this._oViewSettingsDialog = sap.ui.xmlfragment("sap.ui.demo.masterdetail.view.ViewSettingsDialog", this);
+                    this._oViewSettingsDialog = sap.ui.xmlfragment("typescript.example.ui5app.view.ViewSettingsDialog", this);
                     this.getView().addDependent(this._oViewSettingsDialog);
                     // forward compact/cozy style into Dialog
                     this._oViewSettingsDialog.addStyleClass(this.getOwnerComponent().getContentDensityClass());

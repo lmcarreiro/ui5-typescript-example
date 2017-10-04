@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-    "sap/ui/demo/masterdetail/model/grouper",
+    "typescript/example/ui5app/model/grouper",
     "sap/ui/model/resource/ResourceModel",
     "jquery.sap.global"
 ], function (Grouper, ResourceModel, $) {
@@ -9,7 +9,7 @@ sap.ui.define([
 
     function createResourceModel () {
         return new ResourceModel({
-            bundleUrl : [$.sap.getModulePath("sap.ui.demo.masterdetail"), "i18n/i18n.properties"].join("/")
+            bundleUrl : [$.sap.getModulePath("typescript.example.ui5app"), "i18n/i18n.properties"].join("/")
         });
     }
 

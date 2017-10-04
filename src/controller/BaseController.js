@@ -5,7 +5,7 @@ sap.ui.define([
     ], function (Controller, History) {
         "use strict";
 
-        return Controller.extend("sap.ui.demo.masterdetail.controller.BaseController", {
+        return Controller.extend("typescript.example.ui5app.controller.BaseController", {
             /**
              * Convenience method for accessing the router in every controller of the application.
              * @public
