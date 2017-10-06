@@ -44,6 +44,7 @@ namespace typescript.example.ui5app
          * @override
          */
         public destroy(bSuppressInvalidate: boolean): void {
+            //TODO|@types/openui5: destroy's argument doesn't exist anymore (https://sapui5.hana.ondemand.com/#/api/sap.ui.base.Object)
             this.oListSelector.destroy();
             this._oErrorHandler.destroy();
 
