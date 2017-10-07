@@ -16,6 +16,9 @@
             "sap/*": [ "./ui5-exports/sap/*" ]
         }
     },
+    "files": [
+        "node_modules/ui5ts/ui5ts.d.ts"
+    ],
     "include": [
         "src/**/*",
         "ui5-exports/**/*",

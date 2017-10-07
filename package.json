@@ -9,7 +9,7 @@
         "lint": "tslint ./src/**/*.ts -t verbose"
     },
     "dependencies": {
-        "ui5ts": "^0.0.3"
+        "ui5ts": "0.0.5"
     },
     "devDependencies": {
         "@types/es6-shim": "^0.31.35",
