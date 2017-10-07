@@ -8,6 +8,9 @@
         "build:watch": "tsc -p tsconfig.json -w",
         "lint": "tslint ./src/**/*.ts -t verbose"
     },
+    "dependencies": {
+        "ui5ts": "^0.0.3"
+    },
     "devDependencies": {
         "@types/es6-shim": "^0.31.35",
         "@types/jquery": "^2.0.47",
