@@ -11,7 +11,7 @@ export default class Component extends UIComponent
         manifest : "json"
     };
 
-    private oListSelector: ListSelector;
+    public oListSelector: ListSelector;
     private _oErrorHandler: ErrorHandler;
     private _sContentDensityClass: string;
 
