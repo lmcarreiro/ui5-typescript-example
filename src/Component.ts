@@ -43,8 +43,8 @@ export default class Component extends UIComponent
      */
     public destroy(bSuppressInvalidate: boolean): void {
         //TODO|@types/openui5: destroy's argument doesn't exist anymore (https://sapui5.hana.ondemand.com/#/api/sap.ui.base.Object)
-        this.oListSelector.destroy();
-        this._oErrorHandler.destroy();
+        this.oListSelector.destroy(<boolean><any>undefined);
+        this._oErrorHandler.destroy(<boolean><any>undefined);
 
         // call the base component's destroy function
         super.destroy(bSuppressInvalidate);

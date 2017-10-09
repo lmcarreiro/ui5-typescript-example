@@ -57,7 +57,7 @@ export default class BaseController extends Controller
         //TODO|@types/openui5: History's getInstance() method should be static.
         //I put an invalid cast here, so the return type of getInstance could be 'History' instead of 'any'
         //var sPreviousHash = History.getInstance().getPreviousHash();
-        var sPreviousHash = (<History>History).getInstance().getPreviousHash();
+        var sPreviousHash = (<History><any>History).getInstance().getPreviousHash();
 
         //TODO|@types/openui5: History's getPreviousHash() method should return string|undefined instead of just string, like is said on the docs:
         // "gets the previous hash in the history - if the last direction was Unknown or there was no navigation yet, undefined will be returned"

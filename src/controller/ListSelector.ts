@@ -90,13 +90,13 @@ export default class ListSelector extends BaseObject
 
                 //TODO|@types/openui5: getBindingContext's argument must be optional, like in the API docs
                 // skip update if the current selection is already matching the object path
-                if (oSelectedItem && oSelectedItem.getBindingContext().getPath() === sBindingPath) {
+                if (oSelectedItem && oSelectedItem.getBindingContext("").getPath("") === sBindingPath) {
                     return;
                 }
 
                 oList.getItems().some((oItem: sap.m.ListItemBase) => {
                     //TODO|@types/openui5: getBindingContext's argument must be optional, like in the API docs
-                    if (oItem.getBindingContext() && oItem.getBindingContext().getPath() === sBindingPath) {
+                    if (oItem.getBindingContext("") && oItem.getBindingContext("").getPath("") === sBindingPath) {
                         oList.setSelectedItem(oItem, true);
                         return true;
                     }
