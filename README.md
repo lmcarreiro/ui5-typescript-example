@@ -16,27 +16,22 @@ npm start
 import UIComponent  from "sap/ui/core/UIComponent";
 import models       from "typescript/example/ui5app/model/models";
 
-namespace typescript.example.ui5app
+@UI5("typescript.example.ui5app.Component")
+export default class Component extends UIComponent
 {
-    @UI5("typescript.example.ui5app.Component")
-    export class Component extends UIComponent
-    {
-        public static metadata: any = {
-            manifest : "json"
-        };
+    public static metadata: any = {
+        manifest : "json"
+    };
 
-        public init(): void {
-            // set the device model
-            this.setModel(models.createDeviceModel(), "device");
-            // call the base component's init function and create the App view
-            super.init();
-            // create the views based on the url/hash
-            this.getRouter().initialize();
-        }
+    public init(): void {
+        // set the device model
+        this.setModel(models.createDeviceModel(), "device");
+        // call the base component's init function and create the App view
+        super.init();
+        // create the views based on the url/hash
+        this.getRouter().initialize();
     }
 }
-
-export default typescript.example.ui5app.Component;
 ```
 
 ## Progress
