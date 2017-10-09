@@ -26,7 +26,8 @@ export default class ListSelector extends BaseObject
             // Used to wait until the setBound masterList function is invoked
             this._oWhenListHasBeenSet
                 .then((oList: sap.m.List) => {
-                    oList.getBinding("items").attachEventOnce("dataReceived",
+                    //TODO|@types/openui5: attachEventOnce must be overloaded because oData parameter is optional and is followed by fnFunction that is required
+                    oList.getBinding("items").attachEventOnce("dataReceived", undefined,
                         (oEvent: sap.ui.base.Event) => {
                             if (!oEvent.getParameter("data")) {
                                 fnReject({
