@@ -52,7 +52,7 @@ using typescript in your own ui5 projects.
   * [ ] Master.controller.js
 * [ ] /localService
 * [ ] /model
-  * [ ] formatter.js
+  * [x] ~~formatter.js~~ -> formatter.ts
   * [ ] grouper.js
   * [ ] GroupSortState.js
   * [x] ~~models.js~~ -> models.ts
