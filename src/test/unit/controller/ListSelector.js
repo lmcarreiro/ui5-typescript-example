@@ -51,7 +51,7 @@ sap.ui.define([
             oDataStub = {
                 getParameter : fnGetParameter
             },
-            fnAttachEventOnce = function (sEventName, fnCallback) {
+            fnAttachEventOnce = function (sEventName, oData, fnCallback) {
                 fnCallback(oDataStub);
             },
             fnGetBinding = this.stub().returns({

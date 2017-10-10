@@ -46,7 +46,7 @@ sap.ui.define([
                 // Make sure, busy indication is showing immediately so there is no
                 // break after the busy indication for loading the view's meta data is
                 // ended (see promise 'oWhenMetadataIsLoaded' in AppController)
-                oList.attachEventOnce("updateFinished", function(){
+                oList.attachEventOnce("updateFinished", undefined, function(){
                     // Restore original busy indicator delay for the list
                     oViewModel.setProperty("/delay", iOriginalBusyDelay);
                 });
