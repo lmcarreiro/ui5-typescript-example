@@ -50,7 +50,8 @@ using typescript in your own ui5 projects.
   * [x] ~~ErrorHandler.js~~ -> ErrorHandler.ts
   * [x] ~~ListSelector.js~~ -> ListSelector.ts
   * [ ] Master.controller.js
-* [ ] /localService
+* [x] /localService
+  * [x] ~~mockserver.js~~ -> mockserver.ts
 * [x] /model
   * [x] ~~formatter.js~~ -> formatter.ts
   * [x] ~~grouper.js~~ -> grouper.ts
