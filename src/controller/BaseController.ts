@@ -1,6 +1,7 @@
 /*global history */
-import Controller   from "sap/ui/core/mvc/Controller";
-import History      from "sap/ui/core/routing/History";
+import Controller    from "sap/ui/core/mvc/Controller";
+import History       from "sap/ui/core/routing/History";
+import MyUIComponent from "typescript/example/ui5app/Component";
 
 @UI5("typescript.example.ui5app.controller.BaseController")
 export default class BaseController extends Controller
@@ -20,8 +21,8 @@ export default class BaseController extends Controller
      * @param {string} sName the model name
      * @returns {sap.ui.model.Model} the model instance
      */
-    public getModel(sName?: string|undefined): sap.ui.model.Model {
-        return this.getView().getModel(sName);
+    public getModel<T extends sap.ui.model.Model = sap.ui.model.Model>(sName?: string): T {
+        return <T>this.getView().getModel(sName);
     }
 
     /**
@@ -42,9 +43,29 @@ export default class BaseController extends Controller
      * @public
      * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component
      */
-    public getResourceBundle(): sap.ui.model.resource.ResourceModel {
+    public getResourceBundle(): jQuery.sap.util.ResourceBundle {
         let resourceModel = <sap.ui.model.resource.ResourceModel>this.getOwnerComponent().getModel("i18n");
         return resourceModel.getResourceBundle();
+    }
+
+    /**
+     * Convenience method for getting the typed owner component.
+     * @public
+     * @override
+     * @returns {typescript.example.ui5app.Component} the owner component
+     */
+    public getOwnerComponent(): MyUIComponent {
+        return <MyUIComponent>super.getOwnerComponent();
+    }
+
+    /**
+     * Convenience method for getting an typed element by Id.
+     * @public
+     * @override
+     * @returns the element
+     */
+    public byId<T extends sap.ui.core.Element>(sId: string): T {
+        return <T>super.byId(sId);
     }
 
     /**

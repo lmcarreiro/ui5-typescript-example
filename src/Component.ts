@@ -70,4 +70,14 @@ export default class Component extends UIComponent
         }
         return this._sContentDensityClass;
     }
+
+    /**
+     * Convenience method for getting the model.
+     * @public
+     * @override
+     * @returns the model of the component
+     */
+    public getModel<T extends sap.ui.model.Model>(sName?: string): T {
+        return <T>super.getModel(sName);
+    }
 }

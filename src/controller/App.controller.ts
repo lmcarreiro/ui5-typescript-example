@@ -1,5 +1,4 @@
 import BaseController   from "typescript/example/ui5app/controller/BaseController";
-import MyUIComponent    from "typescript/example/ui5app/Component";
 import JSONModel        from "sap/ui/model/json/JSONModel";
 
 @UI5("typescript.example.ui5app.controller.App")
@@ -7,8 +6,9 @@ export default class App extends BaseController {
 
     public onInit(): void {
         var oViewModel: JSONModel,
+            oComponent = this.getOwnerComponent(),
+            oModel = oComponent.getModel<sap.ui.model.odata.v2.ODataModel>(),
             fnSetAppNotBusy: () => void,
-            oComponent: MyUIComponent = <MyUIComponent>this.getOwnerComponent(),
             oListSelector = oComponent.oListSelector,
             iOriginalBusyDelay = this.getView().getBusyIndicatorDelay();
 
@@ -23,13 +23,13 @@ export default class App extends BaseController {
             oViewModel.setProperty("/delay", iOriginalBusyDelay);
         };
 
-        (<sap.ui.model.odata.v2.ODataModel>oComponent.getModel(undefined)).metadataLoaded()
+        oModel.metadataLoaded()
                 .then(fnSetAppNotBusy);
 
         // Makes sure that master view is hidden in split app
         // after a new list entry has been selected.
         oListSelector.attachListSelectionChange(() => {
-            (<sap.m.SplitApp>this.byId("idAppControl")).hideMaster();
+            this.byId<sap.m.SplitApp>("idAppControl").hideMaster();
         }, this);
 
         //TODO|@types/openui5: sap.ui.core.Control's addStyleClass method must accept a string argument
