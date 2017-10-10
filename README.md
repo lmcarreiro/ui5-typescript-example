@@ -51,10 +51,10 @@ using typescript in your own ui5 projects.
   * [x] ~~ListSelector.js~~ -> ListSelector.ts
   * [ ] Master.controller.js
 * [ ] /localService
-* [ ] /model
+* [x] /model
   * [x] ~~formatter.js~~ -> formatter.ts
   * [x] ~~grouper.js~~ -> grouper.ts
-  * [ ] GroupSortState.js
+  * [x] ~~GroupSortState.js~~ -> GroupSortState.ts
   * [x] ~~models.js~~ -> models.ts
 * [ ] /test
 * [x] ~~Component.js~~ -> Component.ts
