@@ -44,9 +44,9 @@ I hope that the classes in this example that is already converted to typescript 
 using typescript in your own ui5 projects.
 
 * [ ] /controller
-  * [ ] App.controller.js
+  * [x] ~~App.controller.js~~ -> App.controller.ts
   * [x] ~~BaseController.js~~ -> BaseController.ts
-  * [ ] Detail.controller.js
+  * [x] ~~Detail.controller.js~~ -> Detail.controller.ts
   * [x] ~~ErrorHandler.js~~ -> ErrorHandler.ts
   * [x] ~~ListSelector.js~~ -> ListSelector.ts
   * [ ] Master.controller.js
