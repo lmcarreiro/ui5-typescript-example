@@ -12,8 +12,10 @@ export default {
      * @public
      */
     init(): void {
-        var oUriParameters = <any>jQuery.sap.getUriParameters(undefined),
-            sJsonFilesUrl = jQuery.sap.getModulePath(_sJsonFilesModulePath, undefined),
+        //TODO|openui5: getUriParameters parameter must be optional
+        var oUriParameters = <any>jQuery.sap.getUriParameters(<string><any>undefined),
+            //TODO|openui5: getModulePath 2nd parameter must be optional
+            sJsonFilesUrl = jQuery.sap.getModulePath(_sJsonFilesModulePath, <string><any>undefined),
             sManifestUrl = jQuery.sap.getModulePath(_sAppModulePath + "manifest", ".json"),
             sEntity = "Objects",
             sErrorParam = oUriParameters.get("errorType"),
@@ -24,13 +26,12 @@ export default {
             // ensure there is a trailing slash
             sMockServerUrl = /.*\/$/.test(oMainDataSource.uri) ? oMainDataSource.uri : oMainDataSource.uri + "/";
 
-        //TODO|@types/openui5: sap.ui.base.ManagedObject must have a constructor overload without the sId param
+        //TODO|ui5ts: generate constructors (with overloads when there is an optional parameter followed by a required one)
         oMockServer = new MockServer({
             rootUri : sMockServerUrl
         });
 
         // configure mock server with a delay of 1s
-        //TODO|@types/openui5: sap.ui.core.util.MockServer config method is static
         MockServer.config({
             autoRespond : true,
             autoRespondAfter : (oUriParameters.get("serverDelay") || 1000)

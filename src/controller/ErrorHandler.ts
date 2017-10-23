@@ -6,7 +6,7 @@ import MyUIComponent    from "typescript/example/ui5app/Component";
 export default class ErrorHandler extends UI5Object
 {
     private _oResourceModel: sap.ui.model.resource.ResourceModel;
-    private _oResourceBundle: any;
+    private _oResourceBundle: typeof jQuery.sap.util.ResourceBundle;
     private _oComponent: MyUIComponent;
     private _oModel: sap.ui.model.odata.v2.ODataModel;
     private _bMessageOpen: boolean;
@@ -21,12 +21,10 @@ export default class ErrorHandler extends UI5Object
      */
     public constructor(oComponent: MyUIComponent) {
         super();
-        //TODO|@types/openui5: It would avoid a lot of casts if getModel() accept a generic type argument that extends sap.ui.model.Model and return this generic type
         this._oResourceModel = oComponent.getModel("i18n");
-        //TODO|@types/openui5: getResourceBundle returns jQuery.sap.util.ResourceBundle|Promise, not 'any'
-        this._oResourceBundle = this._oResourceModel.getResourceBundle();
+        //TODO|ui5ts: check how to convert T|Promise<T> into T
+        this._oResourceBundle = <any>this._oResourceModel.getResourceBundle();
         this._oComponent = oComponent;
-        //TODO|@types/openui5: getModel's argument must be optional, like in the API docs
         this._oModel = oComponent.getModel();
         this._bMessageOpen = false;
         this._sErrorText = this._oResourceBundle.getText("errorText");

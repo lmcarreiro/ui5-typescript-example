@@ -17,7 +17,8 @@
     },
     "files": [
         "node_modules/ui5ts/ui5ts.d.ts",
-        "node_modules/ui5ts/types/sap.d.ts"
+        "node_modules/ui5ts/types/sap.d.ts",
+        "node_modules/ui5ts/types/jQuery.d.ts"
     ],
     "include": [
         "src/**/*",

@@ -26,8 +26,7 @@ export default class ListSelector extends BaseObject
             // Used to wait until the setBound masterList function is invoked
             this._oWhenListHasBeenSet
                 .then((oList: sap.m.List) => {
-                    //TODO|@types/openui5: attachEventOnce must be overloaded because oData parameter is optional and is followed by fnFunction that is required
-                    oList.getBinding("items").attachEventOnce("dataReceived", undefined,
+                    oList.getBinding("items").attachEventOnce("dataReceived",
                         (oEvent: sap.ui.base.Event) => {
                             if (!oEvent.getParameter("data")) {
                                 fnReject({
@@ -88,15 +87,15 @@ export default class ListSelector extends BaseObject
 
                 oSelectedItem = oList.getSelectedItem();
 
-                //TODO|@types/openui5: getBindingContext's argument must be optional, like in the API docs
+                //TODO|openui5: getPath's argument must be optional
                 // skip update if the current selection is already matching the object path
-                if (oSelectedItem && oSelectedItem.getBindingContext("").getPath("") === sBindingPath) {
+                if (oSelectedItem && oSelectedItem.getBindingContext().getPath("") === sBindingPath) {
                     return;
                 }
 
                 oList.getItems().some((oItem: sap.m.ListItemBase) => {
-                    //TODO|@types/openui5: getBindingContext's argument must be optional, like in the API docs
-                    if (oItem.getBindingContext("") && oItem.getBindingContext("").getPath("") === sBindingPath) {
+                    //TODO|openui5: getPath's argument must be optional
+                    if (oItem.getBindingContext() && oItem.getBindingContext().getPath("") === sBindingPath) {
                         oList.setSelectedItem(oItem, true);
                         return true;
                     }
