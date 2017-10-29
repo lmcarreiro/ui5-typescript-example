@@ -43,9 +43,10 @@ export default class BaseController extends Controller
      * @public
      * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component
      */
-    public getResourceBundle(): jQuery.sap.util.ResourceBundle {
+    public getResourceBundle(): typeof jQuery.sap.util.ResourceBundle {
         let resourceModel = <sap.ui.model.resource.ResourceModel>this.getOwnerComponent().getModel("i18n");
-        return resourceModel.getResourceBundle();
+        //TODO: decide what to do when a method return T|Promise<T>
+        return <any>resourceModel.getResourceBundle();
     }
 
     /**
