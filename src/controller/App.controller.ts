@@ -32,10 +32,8 @@ export default class App extends BaseController {
             this.byId<sap.m.SplitApp>("idAppControl").hideMaster();
         }, this);
 
-        //TODO|@types/openui5: sap.ui.core.Control's addStyleClass method must accept a string argument
         // apply content density mode to root view
-        //this.getView().addStyleClass(oComponent.getContentDensityClass());
-        this.getView().addStyleClass.call(this.getView(), oComponent.getContentDensityClass());
+        this.getView().addStyleClass(oComponent.getContentDensityClass());
     }
 
 }

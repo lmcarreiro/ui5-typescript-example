@@ -43,9 +43,10 @@ export default class BaseController extends Controller
      * @public
      * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component
      */
-    public getResourceBundle(): jQuery.sap.util.ResourceBundle {
+    public getResourceBundle(): typeof jQuery.sap.util.ResourceBundle {
         let resourceModel = <sap.ui.model.resource.ResourceModel>this.getOwnerComponent().getModel("i18n");
-        return resourceModel.getResourceBundle();
+        //TODO: decide what to do when a method return T|Promise<T>
+        return <any>resourceModel.getResourceBundle();
     }
 
     /**
@@ -75,12 +76,9 @@ export default class BaseController extends Controller
      * @public
      */
     public onNavBack(): void {
-        //TODO|@types/openui5: History's getInstance() method should be static.
-        //I put an invalid cast here, so the return type of getInstance could be 'History' instead of 'any'
-        //var sPreviousHash = History.getInstance().getPreviousHash();
-        var sPreviousHash = (<History><any>History).getInstance().getPreviousHash();
+        var sPreviousHash = History.getInstance().getPreviousHash();
 
-        //TODO|@types/openui5: History's getPreviousHash() method should return string|undefined instead of just string, like is said on the docs:
+        //TODO|ui5ts: History's getPreviousHash() method should return string|undefined instead of just string, like is said on the docs:
         // "gets the previous hash in the history - if the last direction was Unknown or there was no navigation yet, undefined will be returned"
 
         if (sPreviousHash !== undefined) {
